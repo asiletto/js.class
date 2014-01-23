@@ -5,6 +5,14 @@ use Tonic\UnauthorizedException;
 
 class BaseResource extends Resource {
 	
+	/*
+	 * set the enabled menu
+	 */
+	function navigation($value){
+			$smarty = $this->container['smarty'];
+			$smarty->assign('navigation', $value);
+	}
+	
 	function json(){
 		$this->before(function ($request) {
 			if ($request->contentType == "application/json") {

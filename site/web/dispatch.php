@@ -12,7 +12,7 @@ $container = new Pimple();
 $container['log_dateformat'] = "Y-m-d H:i:s";
 $container['log_logformat'] = "[%datetime%] %channel%.%level_name%: %message% %context%\n";
 $container['log_file'] = "/tmp/js.log";
-$container['log_appender'] = "JS.PEERATES";
+$container['log_appender'] = "JS.CLIENT";
 // smarty configuration
 $container['smarty_template_dir'] = '../views';
 $container['smarty_compile_dir'] = sys_get_temp_dir();
@@ -21,13 +21,11 @@ $container['smarty_compile_dir'] = sys_get_temp_dir();
 //		"test" => "test"
 //	);
 
-$container['smarty'] = function($c){
-	$smarty = new Smarty();
-	$smarty->setTemplateDir($c['smarty_template_dir']);
-	$smarty->setCompileDir($c['smarty_compile_dir']);
-	$smarty->error_reporting = E_ALL & ~E_NOTICE;
-	return $smarty;
-};
+$smarty = new Smarty();
+$smarty->setTemplateDir('../views');
+$smarty->setCompileDir(sys_get_temp_dir());
+$smarty->error_reporting = E_ALL & ~E_NOTICE;
+$container['smarty'] = $smarty;
 
 $container['log'] = function($c){
 	$logger = new Monolog\Logger($c['log_appender']);
