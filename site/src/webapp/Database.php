@@ -11,6 +11,7 @@ class Database extends BaseResource {
 	/**
 	 * @method GET
 	 * @navigation /database
+ 	 * @addCss custom-mongodb.css
 	 */
 	function execute() {
 		$smarty = $this->container['smarty'];

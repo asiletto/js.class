@@ -11,6 +11,7 @@ class ServerSync extends BaseResource {
 	/**
 	 * @method GET
 	 * @navigation /server/sync
+	 * @addCss custom-php.css
 	 */
 	function execute() {
 		$smarty = $this->container['smarty'];

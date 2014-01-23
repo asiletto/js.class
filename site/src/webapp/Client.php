@@ -11,6 +11,7 @@ class Client extends BaseResource {
 	/**
 	 * @method GET
 	 * @navigation /client
+	 * @addCss custom-js.css
 	 */
 	function execute() {
 		$smarty = $this->container['smarty'];

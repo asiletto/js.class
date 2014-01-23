@@ -12,6 +12,14 @@ class BaseResource extends Resource {
 			$smarty = $this->container['smarty'];
 			$smarty->assign('navigation', $value);
 	}
+
+	/*
+	 * add custom css
+	 */
+	function addCss($value){
+			$smarty = $this->container['smarty'];
+			$smarty->assign('customCss', $value);
+	}
 	
 	function json(){
 		$this->before(function ($request) {

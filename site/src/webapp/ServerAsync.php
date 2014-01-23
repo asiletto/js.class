@@ -11,6 +11,7 @@ class ServerAsync extends BaseResource {
 	/**
 	 * @method GET
 	 * @navigation /server/async
+	 * @addCss custom-node.css
 	 */
 	function execute() {
 		$smarty = $this->container['smarty'];
