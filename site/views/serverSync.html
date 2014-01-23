@@ -2,13 +2,32 @@
 
 {include file="navbar.html"}
 
-    <div class="container">
+	<div class="jumbotron">
+	  <div class="container">
+		<h2>Server side / Synchronous</h2>
+		<p>Try something different instead of the same old lorem ipsum. Below you can find several alternatives.</p>
+	  </div>
+	</div>
 
-      <div class="front-banner">
-        <h1>Server side / Synchronous</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+	<div class="row">
+		<nav id="affix-nav" class="sidebar col-md-3 col-sm-3">
+			<ul class="nav sidenav affix" data-spy="affix" data-offset-top="300">
+				{include file='serverSync/pimple.html' fragment='head'}
+				{include file='serverSync/monolog.html' fragment='head'}
+				{include file='serverSync/tonic.html' fragment='head'}
+				{include file='serverSync/smarty.html' fragment='head'}
+				{include file='serverSync/phpblank.html' fragment='head'}
+			</ul>
+		</nav>
+		<section id="content" class="col-md-8 col-sm-8 col-xs-12">
+				{include file='serverSync/pimple.html'}
+				{include file='serverSync/monolog.html'}
+				{include file='serverSync/tonic.html'}
+				{include file='serverSync/smarty.html'}
+				{include file='serverSync/phpblank.html'}
+		</section> 
+		
+	</div><!-- end of row -->
 
-    </div>
 	
 {include file="footer.html"}

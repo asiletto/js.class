@@ -2,13 +2,28 @@
 
 {include file="navbar.html"}
 
-    <div class="container">
+	<div class="jumbotron">
+	  <div class="container">
+		<h2>Client side</h2>
+		<p>Try something different instead of the same old lorem ipsum. Below you can find several alternatives.</p>
+	  </div>
+	</div>
 
-      <div class="front-banner">
-        <h1>Client side</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+	<div class="row">
+		<nav id="affix-nav" class="sidebar col-md-3 col-sm-3">
+			<ul class="nav sidenav affix" data-spy="affix" data-offset-top="300">
+				{include file='client/ajax.html' fragment='head'}
+				{include file='client/oo.html' fragment='head'}
+				{include file='client/async.html' fragment='head'}
+			</ul>
+		</nav>
+		<section id="content" class="col-md-8 col-sm-8 col-xs-12">
+		{include file='client/ajax.html'}
+		{include file='client/oo.html'}
+		{include file='client/async.html'}
+		</section> 
+		
+	</div><!-- end of row -->
 
-    </div>
 	
 {include file="footer.html"}
