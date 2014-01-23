@@ -1,0 +1,12 @@
+body {
+  padding-top: 50px;
+}
+.front-banner {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.navbar-inverse {
+background-color: #46483e;
+border-color: #690;
+}
