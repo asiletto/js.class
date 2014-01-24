@@ -2,15 +2,14 @@
 	<li>
 		<a href="#node">node.js</a>
 		<ul class="nav">
-			<li><a href="#node-installation">installation</a></li>
+			<li><a href="#node-installation">Installazione</a></li>
 			<li><a href="#npm">npm</a></li>
-			<li><a href="#node-hello">hello world</a></li>
-			<li><a href="#node-module">writing a module</a></li>
-			<li><a href="#routing">routing</a></li>
-			<li><a href="#package">package</a></li>
-			<li><a href="#eventemitter">EventEmitter</a></li>
+			<li><a href="#node-hello">Hello world!</a></li>
+			<li><a href="#node-module">Scrivere un modulo</a></li>
+			<li><a href="#routing">Routing</a></li>
+			<li><a href="#package">package.json</a></li>
 			<li><a href="#forever">forever</a></li>
-			<li><a href="#proxy">apache2 proxy</a></li>
+			<li><a href="#eventemitter">EventEmitter</a></li>
 		</ul>
 	</li>
 {else}
@@ -19,8 +18,8 @@
 	<p><a href="http://nodejs.org/" target="_new">Node.js</a> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
 	
 		<section id="node-installation">
-			<h3>installation</h3>
-			<p>Da testare</p>
+			<h3>installazione</h3>
+			<p>Per scaricare e compilare node.js dai sorgenti (da testare):</p>
 			<script src="https://gist.github.com/asiletto/8595774.js"></script>
 		</section>
 
@@ -57,7 +56,7 @@
 		</section>
 
 		<section id="node-module">
-			<h3>Writing a module</h3>
+			<h3>Scrivere un modulo</h3>
 			<p>E' possibile riscrivere l'esempio precedente spostando la logica all'interno di due moduli, un modulo <b>server</b> che si occupa di far partire il server e un modulo <b>greeter</b> che si occupa di gestire le risposte.</p>
 			<script src="https://gist.github.com/asiletto/8595636.js"></script>
 			<script src="https://gist.github.com/asiletto/8595639.js"></script>
@@ -84,23 +83,23 @@
 
 		<section id="package">
 			<h3>package.json</h3>
-			<p>Sugar plum sweet roll oat cake muffin tootsie roll danish brownie. Toffee cheesecake pudding pastry lollipop dessert candy chocolate cake wafer. Chupa chups marshmallow jelly caramels pie candy canes gummi bears wafer carrot cake. Wafer marshmallow chocolate cotton candy brownie. Lemon drops oat cake halvah cookie liquorice pie. Tart tootsie roll chupa chups cake wafer bear claw tart unerdwear.com. Cookie bonbon tart lollipop gummi bears pudding wafer danish. Marzipan cake dessert chupa chups tart chocolate cake bonbon jujubes. Unerdwear.com biscuit cookie cake gummies sweet roll tart caramels.</p>
+			<p>Il file package.json può essere utilizzato come descrittore del progetto. E' possibile utilizzare il comando <b>npm init</b> per generare un package.json tramite una serie di domande interattive:</p>
+			<script src="https://gist.github.com/asiletto/8597115.js"></script>
+			<p>Il file generato è il seguente. Notare come sia stata aggiunta la dipendenza del modulo router.</p>
+			<script src="https://gist.github.com/asiletto/8597138.js"></script>
+			<p>E' possibile modificare manualmente questo file per aggiungere ulteriori moduli, nella sezione dependencies, per poi scaricare ed installare tutte le dipendenze tramite il comando <b>npm install</b>. In questo modo non dovremo versionare la cartella <b>node_modules</b> ma solo il file package.json.</p>
 		</section>
 		
-		<section id="eventemitter">
-			<h3>EventEmitter</h3>
-			<p>Sugar plum sweet roll oat cake muffin tootsie roll danish brownie. Toffee cheesecake pudding pastry lollipop dessert candy chocolate cake wafer. Chupa chups marshmallow jelly caramels pie candy canes gummi bears wafer carrot cake. Wafer marshmallow chocolate cotton candy brownie. Lemon drops oat cake halvah cookie liquorice pie. Tart tootsie roll chupa chups cake wafer bear claw tart unerdwear.com. Cookie bonbon tart lollipop gummi bears pudding wafer danish. Marzipan cake dessert chupa chups tart chocolate cake bonbon jujubes. Unerdwear.com biscuit cookie cake gummies sweet roll tart caramels.</p>
-		</section>
-				
 		<section id="forever">
 			<h3>forever</h3>
 			<p>Sugar plum sweet roll oat cake muffin tootsie roll danish brownie. Toffee cheesecake pudding pastry lollipop dessert candy chocolate cake wafer. Chupa chups marshmallow jelly caramels pie candy canes gummi bears wafer carrot cake. Wafer marshmallow chocolate cotton candy brownie. Lemon drops oat cake halvah cookie liquorice pie. Tart tootsie roll chupa chups cake wafer bear claw tart unerdwear.com. Cookie bonbon tart lollipop gummi bears pudding wafer danish. Marzipan cake dessert chupa chups tart chocolate cake bonbon jujubes. Unerdwear.com biscuit cookie cake gummies sweet roll tart caramels.</p>
 		</section>
-		
-		<section id="proxy">
-			<h3>apache2 proxy</h3>
+
+		<section id="eventemitter">
+			<h3>EventEmitter</h3>
 			<p>Sugar plum sweet roll oat cake muffin tootsie roll danish brownie. Toffee cheesecake pudding pastry lollipop dessert candy chocolate cake wafer. Chupa chups marshmallow jelly caramels pie candy canes gummi bears wafer carrot cake. Wafer marshmallow chocolate cotton candy brownie. Lemon drops oat cake halvah cookie liquorice pie. Tart tootsie roll chupa chups cake wafer bear claw tart unerdwear.com. Cookie bonbon tart lollipop gummi bears pudding wafer danish. Marzipan cake dessert chupa chups tart chocolate cake bonbon jujubes. Unerdwear.com biscuit cookie cake gummies sweet roll tart caramels.</p>
-		</section>
+		</section>				
+	
 		
 	</div>
 {/if}

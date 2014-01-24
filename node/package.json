@@ -1,0 +1,16 @@
+{
+  "name": "node-test",
+  "version": "0.0.1",
+  "description": "node.js examples",
+  "main": "index.js",
+  "dependencies": {
+    "router": "~0.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Alessandro Siletto",
+  "license": "GNU GENERAL PUBLIC LICENSE V2"
+}
