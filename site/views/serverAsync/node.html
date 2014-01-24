@@ -4,8 +4,10 @@
 		<ul class="nav">
 			<li><a href="#node-installation">installation</a></li>
 			<li><a href="#npm">npm</a></li>
+			<li><a href="#node-hello">hello world</a></li>
 			<li><a href="#node-module">writing a module</a></li>
 			<li><a href="#routing">routing</a></li>
+			<li><a href="#package">package</a></li>
 			<li><a href="#eventemitter">EventEmitter</a></li>
 			<li><a href="#forever">forever</a></li>
 			<li><a href="#proxy">apache2 proxy</a></li>
@@ -14,25 +16,74 @@
 {else}
 	<div class="article" id="node">
 	<h2>node.js</h2>
-	<p>Cupcake ipsum dolor sit amet toffee icing. Muffin danish cotton candy pudding cake danish chocolate candy. Oat cake apple pie ice cream biscuit brownie. Cookie chupa chups jelly lollipop. Chocolate cake sweet gummies ice cream powder gummi bears lemon drops icing caramels. Sesame snaps gingerbread chocolate bar sugar plum fruitcake icing jujubes pie.</p>
+	<p><a href="http://nodejs.org/" target="_new">Node.js</a> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
 	
 		<section id="node-installation">
 			<h3>installation</h3>
-			<p>Macaroon bonbon powder. Chocolate cupcake danish. Apple pie unerdwear.com brownie jelly. Halvah tart fruitcake gingerbread liquorice. Pastry caramels powder. Danish macaroon jujubes dragÃ©e croissant ice cream chocolate tootsie roll gummi bears. Tart jelly-o oat cake wafer.</p>
+			<p>Da testare</p>
+			<script src="https://gist.github.com/asiletto/8595774.js"></script>
 		</section>
 
 		<section id="npm">
 			<h3>npm package manager</h3>
-			<p>Lemon drops chocolate cake jelly beans chocolate wafer unerdwear.com. Apple pie jelly beans topping danish candy canes carrot cake toffee jelly beans. Sweet roll dragÃ©e icing applicake cheesecake. Chupa chups pie pastry icing brownie wafer jujubes powder danish. Topping tiramisu danish jelly beans chupa chups dragÃ©e. Cake tootsie roll sweet roll marshmallow topping pudding toffee powder. Bear claw sesame snaps gummies unerdwear.com topping biscuit muffin. Donut chocolate muffin cotton candy marshmallow applicake.</p>
+			<p>Node.js utilizza npm come package manager. npm è un programma che permette di scaricare e installare i moduli da un repository centralizzato.</p>
+			<script src="https://gist.github.com/asiletto/8595975.js"></script>
+			<p>E' possibile installare un modulo con due modalita, <b>locale</b> e <b>globale</b></p>
+			<p>I moduli locali sono quelli utilizzati solo dalla nostra applicazione, ad esempio per il <a href="#routing">routing</a>. E' possibile (e consigliabile) descrivere le dipendenze del proprio progetto all'interno del file <a href="#package">package.json</a></p>
+			<p>I moduli globali sono installati con l'opzione <b>-g</b> e sono quelli che verranno utilizzati da linea di comando, ad esempio <a href="#forever">forever</a>.</p>
+		</section>
+
+		<section id="node-hello">
+			<h3>node.js Hello world!</h3>
+			<p>Un hello world con node.js non differisce dalla versione client.</p>
+			<script src="https://gist.github.com/asiletto/8594443.js"></script>
+			<p>Per eseguire il codice sopra:</p>
+			<script src="https://gist.github.com/asiletto/8594474.js"></script>
+			<p>Lo stesso esempio può essere scritto utilizzando una funzione di callback.</p>
+			<script src="https://gist.github.com/asiletto/8594490.js"></script>
+			<p>Tipicamente però node.js viene utilizzato per comunicare sulla rete. Utilizzando il modulo http è possibile utilizzare un server web all'interno del nostro script.</p>
+			<script src="https://gist.github.com/asiletto/8594606.js"></script>
+			<p>In questo esempio viene creato un server http, in ascolto sulla porta 8080, e viene utilizzata una funzione che si occupa di gestire tutte le request. E' possibile utilizzare una funzione anonima o (meglio) definire una funzione esterna da utilizzare come callback.</p>
+			<script src="https://gist.github.com/asiletto/8594638.js"></script>
+			<p>Per richiamare questo esempio dobbiamo utilizzare un browser o wget:</p>
+			<script src="https://gist.github.com/asiletto/8594720.js"></script>
+			<p>In questo caso il programma rimane in esecuzione, ed ogni volta che arriva una request viene eseguita la funzione che abbiamo definito. Per terminare il programma possiamo killarlo con:</p>
+			<script src="https://gist.github.com/asiletto/8594732.js"></script>
+			<p>Il modulo <b>url</b> mette a disposizione alcune utility per il parsing degli url. Estendiamo l'esempio precedente passando un parametro al nostro script.</p>
+			<script src="https://gist.github.com/asiletto/8595461.js"></script>
+			<p>Passando un parametro allo script, lato server viene mostrato un dettaglio dell'url chiamato:</p>
+			<script src="https://gist.github.com/asiletto/8595479.js"></script>
+			<script src="https://gist.github.com/asiletto/8595485.js"></script>
 		</section>
 
 		<section id="node-module">
 			<h3>Writing a module</h3>
-			<p>Sugar plum sweet roll oat cake muffin tootsie roll danish brownie. Toffee cheesecake pudding pastry lollipop dessert candy chocolate cake wafer. Chupa chups marshmallow jelly caramels pie candy canes gummi bears wafer carrot cake. Wafer marshmallow chocolate cotton candy brownie. Lemon drops oat cake halvah cookie liquorice pie. Tart tootsie roll chupa chups cake wafer bear claw tart unerdwear.com. Cookie bonbon tart lollipop gummi bears pudding wafer danish. Marzipan cake dessert chupa chups tart chocolate cake bonbon jujubes. Unerdwear.com biscuit cookie cake gummies sweet roll tart caramels.</p>
+			<p>E' possibile riscrivere l'esempio precedente spostando la logica all'interno di due moduli, un modulo <b>server</b> che si occupa di far partire il server e un modulo <b>greeter</b> che si occupa di gestire le risposte.</p>
+			<script src="https://gist.github.com/asiletto/8595636.js"></script>
+			<script src="https://gist.github.com/asiletto/8595639.js"></script>
+			<script src="https://gist.github.com/asiletto/8595643.js"></script>
+			
 		</section>
 		
 		<section id="routing">
 			<h3>Routing</h3>
+			<p>Negli esempi precedenti qualsiasi request viene intercettata dal metodo <b>handleRequest</b>. In un caso reale invece dovrà essere eseguita una callback diversa a seconda dell'url chiamato. Bisogna cioè implementare un meccanismo di routing delle chiamate.</p>
+			<p>Esiste una <a href="https://github.com/joyent/node/wiki/modules#wiki-web-frameworks-routers">moltitudine di moduli</a> dedicati a questo scopo, con diverse implementazioni più o meno complesse e diverse funzionalità.</p>
+			<p>Proviamo ad utilizzare uno di questi moduli, <a href="https://github.com/gett/router" target="_new">gett/router</a>. Installiamo il modulo localmente con npm.</p>
+			<script src="https://gist.github.com/asiletto/8596023.js"></script>
+			<p>npm installera il modulo <b>router</b> (e gli eventuali moduli dipendenti) nella cartella <b>node_modules</b> all'interno del nostro progetto.</p>
+			<p>Un esempio basilare di utilizzo del modulo router è il seguente, in cui vengono associate due callback diverse ai due path <b>/hello</b> e <b>/goodbye</b>.</p>
+			<script src="https://gist.github.com/asiletto/8596201.js"></script>
+			<p>Per testare il nostro esempio:</p>
+			<script src="https://gist.github.com/asiletto/8596225.js"></script>
+			<p>Questo modulo ha delle funzionalità piuttosto avanzate, supporta i diversi metodi HTTP (GET, POST, PUT, HEAD, DEL, OPTIONS) e le espressioni regolari.</p>
+			<p>Modifichiamo l'esempio precedente in modo da non utilizzare il parametro name ma un url del tipo /hello/Pippo o /goodbye/Pippo.</p>
+			<script src="https://gist.github.com/asiletto/8596299.js"></script>
+			<script src="https://gist.github.com/asiletto/8596312.js"></script>
+		</section>
+
+		<section id="package">
+			<h3>package.json</h3>
 			<p>Sugar plum sweet roll oat cake muffin tootsie roll danish brownie. Toffee cheesecake pudding pastry lollipop dessert candy chocolate cake wafer. Chupa chups marshmallow jelly caramels pie candy canes gummi bears wafer carrot cake. Wafer marshmallow chocolate cotton candy brownie. Lemon drops oat cake halvah cookie liquorice pie. Tart tootsie roll chupa chups cake wafer bear claw tart unerdwear.com. Cookie bonbon tart lollipop gummi bears pudding wafer danish. Marzipan cake dessert chupa chups tart chocolate cake bonbon jujubes. Unerdwear.com biscuit cookie cake gummies sweet roll tart caramels.</p>
 		</section>
 		
