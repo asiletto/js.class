@@ -6,4 +6,4 @@ function exec(funct, val){
  funct(val);
 }
 
-exec(say, "Hello world!");
+exec(say, 'Hello world!');
